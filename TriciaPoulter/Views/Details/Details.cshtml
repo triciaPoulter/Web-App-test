@@ -1,0 +1,58 @@
+﻿@model TriciaPoulter.Models.Details
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Details</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Avatar_Url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Avatar_Url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Repos_Url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Repos_Url)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Stargazers_Url)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Stargazers_Url)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

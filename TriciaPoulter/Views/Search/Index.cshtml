@@ -1,0 +1,55 @@
+﻿@model TriciaPoulter.Models.Details
+
+@{
+            ViewBag.Title = "Index";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()    
+    <div ng-app="SearchApp" class="row">
+        <div ng-controller="SearchController"> 
+              <h2>Search Form</h2>
+                <hr />
+            <div class="form-horizontal">
+    <div class="form-group">
+        @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            <input type="text" />          
+                <button>Submit</button>
+                 <div id="div1">
+                <ul></ul>               
+                        <table class="table" id="tableID"> 
+                                <tr ng-repeat="rob in robs  | filter: searchKeyword ">
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                        <div id="searchResult">
+                            @*<div id="div2">Name</div>*@
+                            <h4 id="name"></h4>
+                            <h4 id="location"></h4>
+                            <h4 id="avatar_url"></h4>
+                            <h4 id="repos_url"></h4>
+                            <h4 id="stargazers_url"></h4>
+                        </div>
+            </div>
+        </div>
+    </div>
+</div>
+        </div>
+    </div>
+ }
+        @section Scripts {
+            @Scripts.Render("~/Scripts/load.js")
+            <script src="~/Scripts/webSearch.js"></script>
+        }
+
+<script>
+
+                $(document).ready(function () {
+                    $('#myTable').dataTable();
+                });
+</script>
